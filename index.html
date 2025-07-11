@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Clicker Auto</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f0f4f8;
+    }
+    #home {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #photoBtn, #stopBtn {
+      padding: 1rem 2rem;
+      margin: 1rem;
+      background: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 51, 102, 0.85);
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    #topGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.5rem;
+      padding: 1rem;
+    }
+    .squareCell {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .squareCell iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      border: none;
+    }
+    #bottomAds {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,51,102,0.9);
+    }
+    .bannerCell, .socialCell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="home">
+    <button id="photoBtn">Start Auto Clicker</button>
+    <button id="stopBtn">Stop</button>
+  </div>
+
+  <div id="overlay">
+    <div id="topGrid">
+      <div class="squareCell"><iframe src="https://www.profitableratecpm.com/cg7fbdck?key=84057fe7a4674e7054f60fbc3929a449"></iframe></div>
+      <div class="squareCell"><iframe src="https://www.profitableratecpm.com/cg7fbdck?key=84057fe7a4674e7054f60fbc3929a449"></iframe></div>
+      <div class="squareCell"><iframe src="https://www.profitableratecpm.com/cg7fbdck?key=84057fe7a4674e7054f60fbc3929a449"></iframe></div>
+      <div class="squareCell"><iframe src="https://www.profitableratecpm.com/cg7fbdck?key=84057fe7a4674e7054f60fbc3929a449"></iframe></div>
+    </div>
+    <div id="bottomAds">
+      <div class="bannerCell" style="width:160px; height:300px;">
+        <script type="text/javascript">
+          atOptions = { key:'6dec16de02415542a755f1bfb3ffaedf', format:'iframe', height:300, width:160, params:{} };
+        </script>
+        <script src="//www.highperformanceformat.com/6dec16de02415542a755f1bfb3ffaedf/invoke.js"></script>
+      </div>
+      <div class="bannerCell" style="width:160px; height:600px;">
+        <script type="text/javascript">
+          atOptions = { key:'12de20e2acfa8a6ef3893484c6b42e69', format:'iframe', height:600, width:160, params:{} };
+        </script>
+        <script src="//www.highperformanceformat.com/12de20e2acfa8a6ef3893484c6b42e69/invoke.js"></script>
+      </div>
+      <div class="bannerCell" style="width:320px; height:50px;">
+        <script type="text/javascript">
+          atOptions = { key:'53f2df245c1bb7b96ea23eba763fc9c2', format:'iframe', height:50, width:320, params:{} };
+        </script>
+        <script src="//www.highperformanceformat.com/53f2df245c1bb7b96ea23eba763fc9c2/invoke.js"></script>
+      </div>
+      <div class="bannerCell" style="width:728px; height:90px;">
+        <script type="text/javascript">
+          atOptions = { key:'16b1b6bcf20478387bb82f039b8693fe', format:'iframe', height:90, width:728, params:{} };
+        </script>
+        <script src="//www.highperformanceformat.com/16b1b6bcf20478387bb82f039b8693fe/invoke.js"></script>
+      </div>
+      <div class="bannerCell" style="max-width:600px; height:auto;">
+        <script async data-cfasync="false" src="//pl27137793.profitableratecpm.com/e15fdfccb33756c92e8e1b2c21b8e496/invoke.js"></script>
+        <div id="container-e15fdfccb33756c92e8e1b2c21b8e496"></div>
+      </div>
+      <div class="socialCell" style="width:100px; height:auto;">
+        <script src="//pl27137816.profitableratecpm.com/12/ad/88/12ad88848451aa3df59891d0905ce858.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const photoBtn = document.getElementById('photoBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const overlay = document.getElementById('overlay');
+    let autoRun = false;
+
+    async function showAdsCycle() {
+      while (autoRun) {
+        overlay.style.display = 'flex';
+        await new Promise(r => setTimeout(r, 8000));
+        overlay.style.display = 'none';
+        await new Promise(r => setTimeout(r, 1000));
+      }
+    }
+
+    photoBtn.addEventListener('click', () => {
+      autoRun = true;
+      showAdsCycle();
+    });
+
+    stopBtn.addEventListener('click', () => {
+      autoRun = false;
+    });
+  </script>
+
+</body>
+</html>
