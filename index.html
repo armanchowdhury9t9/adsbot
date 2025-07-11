@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Ads</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f3f3;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      padding: 24px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      color: #FF6600;
+      margin-bottom: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .ad-box {
+      background: #FFF7EE;
+      border: 2px solid #FFD1A3;
+      border-radius: 8px;
+      padding: 0;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .ad-box.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .banner {
+      margin: 16px auto;
+      text-align: center;
+    }
+    #counter {
+      margin: 12px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    button {
+      background: #FF6600;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #e65500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Auto Ads</h1>
+    <div class="grid">
+      <div id="ad1" class="ad-box">
+        <iframe src="https://www.profitableratecpm.com/rge2qysb5?key=1fa7068cca79a7a59aa963c1c115824f" frameborder="0" style="width:100%; height:100%;"></iframe>
+      </div>
+      <div id="ad2" class="ad-box">
+        <script async="async" data-cfasync="false" src="//pl27137793.profitableratecpm.com/e15fdfccb33756c92e8e1b2c21b8e496/invoke.js"></script>
+        <div id="container-e15fdfccb33756c92e8e1b2c21b8e496" style="width:100%; height:100%;"></div>
+      </div>
+    </div>
+
+    <!-- Social Bar -->
+    <div class="banner">
+      <script type='text/javascript' src='//pl27137816.profitableratecpm.com/12/ad/88/12ad88848451aa3df59891d0905ce858.js'></script>
+    </div>
+
+    <!-- New Banner 320x50 -->
+    <div class="banner" style="width:320px; height:50px;">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '53f2df245c1bb7b96ea23eba763fc9c2',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/53f2df245c1bb7b96ea23eba763fc9c2/invoke.js"></script>
+    </div>
+
+    <!-- New Banner 728x90 -->
+    <div class="banner" style="width:728px; height:90px;">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '16b1b6bcf20478387bb82f039b8693fe',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/16b1b6bcf20478387bb82f039b8693fe/invoke.js"></script>
+    </div>
+
+    <!-- Counter Display -->
+    <div id="counter">Elapsed: 0s</div>
+    <button id="toggleBtn">Start Auto Ads</button>
+  </div>
+
+  <script>
+    const ad1 = document.getElementById('ad1');
+    const ad2 = document.getElementById('ad2');
+    const btn = document.getElementById('toggleBtn');
+    const counterEl = document.getElementById('counter');
+    let intervalId, running = false;
+    let counter = 0, counterInterval;
+
+    function showAds() {
+      ad1.classList.add('active');
+      ad2.classList.add('active');
+      setTimeout(() => {
+        ad1.classList.remove('active');
+        ad2.classList.remove('active');
+      }, 10000);
+    }
+
+    function startCycle() {
+      counter = 0; counterEl.textContent = `Elapsed: ${counter}s`;
+      showAds();
+      intervalId = setInterval(showAds, 12000);
+      counterInterval = setInterval(() => {
+        counter++;
+        counterEl.textContent = `Elapsed: ${counter}s`;
+      }, 1000);
+      btn.textContent = 'Stop Auto Ads';
+      running = true;
+    }
+
+    function stopCycle() {
+      clearInterval(intervalId);
+      clearInterval(counterInterval);
+      ad1.classList.remove('active');
+      ad2.classList.remove('active');
+      btn.textContent = 'Start Auto Ads';
+      running = false;
+    }
+
+    btn.addEventListener('click', () => running ? stopCycle() : startCycle());
+  </script>
+</body>
+</html>
